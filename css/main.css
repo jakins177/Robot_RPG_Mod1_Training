@@ -1,0 +1,60 @@
+
+
+#game_board {
+    visibility: hidden;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .one {
+    grid-column: 1;
+    grid-row: 1;
+
+    background-color: blue;
+  }
+  .two { 
+    grid-row: 1;
+    grid-column: 2;
+    background-color: green;
+  }
+  .three {
+    grid-row: 1;
+    grid-column: 3;
+    background-color: orange;
+  }
+  .four {
+    grid-row: 2;
+    grid-column: 1;
+    background-color: purple;
+  }
+  .five {
+    grid-row: 2;
+    grid-column: 2;
+    background-color: red;
+  }
+  .six {
+    grid-row: 2;
+    grid-column: 3;
+    background-color: pink;
+  }
+  .seven {
+    grid-row: 3;
+    grid-column: 1;
+    background-color: yellow;
+  }
+
+  .eight {
+    grid-row: 3;
+    grid-column: 2;
+    background-color: grey;
+  }
+  .nine {
+    grid-row: 3;
+    grid-column: 3;
+    background-color: violet;
+  }
+  
