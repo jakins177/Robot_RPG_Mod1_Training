@@ -10,21 +10,12 @@ export default class EnemyBot {
     }
 
     attack(playerToAttack) {
-        // console.log("%c You are attacking an alien!", 'color:green');
-        // let chanceAccuracy = Math.random();
-    
-        // // console.log(`chance accuracy is ${chanceAccuracy}`);
-    
-        // if (chanceAccuracy > this.accuracy) {
-        //   console.log("%c You MISSED the alien!!!", 'color:red');
-    
-        // } else {
-        //   console.log("%c You HIT the alien!!!", 'color:green');
-        //   alienShip.hull -= this.firepower;
-        //   console.log(`%c You have done ${this.firepower} damage`,'font-style: italic; background: azure; border: 1px solid grey;');
-        //   console.log(`%c The Alien has ${alienShip.hull} remaining`, 'font-style: italic;' );
-    
-        // }
+
+
+        let audio = new Audio('./audio/missile_launch.mp3');
+        audio.play();
+
+        
     
 
         
@@ -33,7 +24,13 @@ export default class EnemyBot {
 
         playerToAttack.HP = playerToAttack.HP - willAttackFor;
 
+
+        
         console.log(`${this.botName} will attack ${playerToAttack.botName} for ${willAttackFor} damage `);
+
+
+        let displayHealth = document.getElementById("player_health");
+        displayHealth.innerHTML = playerToAttack.HP;
 
         let allGood = true;
         if(playerToAttack.HP > 0 )

@@ -8,6 +8,13 @@ export default class PlayerBot {
       this.fireButtonID = fireButtonID;
       console.log(`Player bot ${botName} initialized` );
       this.attack = this.attack.bind(this);
+
+
+
+    
+
+
+
     }
 
 
@@ -29,6 +36,11 @@ export default class PlayerBot {
         //   console.log(`%c The Alien has ${alienShip.hull} remaining`, 'font-style: italic;' );
     
         // }
+
+        let audio = new Audio('./audio/machine_gun.mp3');
+        audio.play();
+
+
         $(function() {
             $("#player_1_fire_button").css("visibility", "hidden");
           });
@@ -41,6 +53,10 @@ export default class PlayerBot {
           enemyToAttack.HP = enemyToAttack.HP - willAttackFor;
 
           console.log(`${this.botName} will attack ${enemyToAttack.botName} for ${willAttackFor} damage `);
+         
+          
+          let enemyHealth = document.getElementById("enemy_health");
+          enemyHealth.innerHTML = enemyToAttack.HP;
 
         let allGood = true;
         if(enemyToAttack.HP > 0 )
