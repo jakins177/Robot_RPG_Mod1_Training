@@ -10,6 +10,10 @@ Controls: "Fire button" (above Determinator)
 
 Technologies: HTML, CSS, JQUERY, JAVASCRIPT.
 
+Approach: I tried to keep it objected oriented, slpitting things up into Javascript classes. 
+
+Unsolved: more weapons and upgrades, enemies and multiple bots on a team, and an adventure peice outside of battle mode
+
 App Designed to meet the following requirements:
 
 Project #1: The Game
