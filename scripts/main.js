@@ -2,7 +2,7 @@
 import EnemyBot from './enemy.js'
 import PlayerBot from './player.js'
 
-let firstEnemy = new EnemyBot(150,20, 15000, "quick missile", "Can Opener");
+let firstEnemy = new EnemyBot(100,20, 15000, "short missile", "Can Opener");
     
 let firstPlayer = new PlayerBot(250,5, 3000, "machine gun", "Determinator", "#player_1_fire_button");
 
@@ -34,9 +34,13 @@ $('#players_1, #players_2').click(function () {
     if (this.id == 'player_1_fire_button') {
      //  alert('There will be 1 player. Get Ready!');
 
+
+     if(firstPlayer.HP > 0 && firstEnemy.HP > 0)
+     {
      firstPlayer.attack(firstEnemy);
-        
-    }
+     }  
+    
+   }
  
 
  });
@@ -45,6 +49,7 @@ $('#players_1, #players_2').click(function () {
 
     let displayHealth = document.getElementById("player_health");
     displayHealth.innerHTML = firstPlayer.HP;
+
     let playerName = document.getElementById("player_name");
     playerName.innerHTML =  firstPlayer.botName;
 
@@ -57,7 +62,10 @@ $('#players_1, #players_2').click(function () {
     firstEnemy.startAttackCounter(firstPlayer);
     //firstPlayer.startAttackCounter();
 
-        
+    let fightDisplay = document.getElementById("fight_display");
+    fightDisplay.innerHTML = `****ROUND 1 FIGHT!!****` + "<br>" + fightDisplay.innerHTML;
+
+
 
  }
 

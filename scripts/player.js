@@ -9,33 +9,13 @@ export default class PlayerBot {
       console.log(`Player bot ${botName} initialized` );
       this.attack = this.attack.bind(this);
 
-
-
-    
-
-
-
     }
 
 
     
 
     attack(enemyToAttack) {
-        // console.log("%c You are attacking an alien!", 'color:green');
-        // let chanceAccuracy = Math.random();
-    
-        // // console.log(`chance accuracy is ${chanceAccuracy}`);
-    
-        // if (chanceAccuracy > this.accuracy) {
-        //   console.log("%c You MISSED the alien!!!", 'color:red');
-    
-        // } else {
-        //   console.log("%c You HIT the alien!!!", 'color:green');
-        //   alienShip.hull -= this.firepower;
-        //   console.log(`%c You have done ${this.firepower} damage`,'font-style: italic; background: azure; border: 1px solid grey;');
-        //   console.log(`%c The Alien has ${alienShip.hull} remaining`, 'font-style: italic;' );
-    
-        // }
+       
 
         let audio = new Audio('./audio/machine_gun.mp3');
         audio.play();
@@ -70,6 +50,8 @@ export default class PlayerBot {
         else{
             fightDisplay.innerHTML = `ENEMY DESTROYED!!!! ENEMY DESTROYED!!!! ENEMY DESTROYED!!!!` + "<br>" + fightDisplay.innerHTML;
             console.log("ENEMY DESTROYED!!!! ENEMY DESTROYED!!!! ENEMY DESTROYED!!!!");
+            enemyToAttack.loadNextRoundEnemy();
+            this.startAttackCounter();
         }
 
       }
