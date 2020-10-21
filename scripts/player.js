@@ -52,6 +52,9 @@ export default class PlayerBot {
           let willAttackFor = ( Math.floor(Math.random() * (max - min + 1)) +  min);
           enemyToAttack.HP = enemyToAttack.HP - willAttackFor;
 
+          let fightDisplay = document.getElementById("fight_display");
+
+        fightDisplay.innerHTML = `${this.botName} will attack ${enemyToAttack.botName} for ${willAttackFor} damage` + "<br>" + fightDisplay.innerHTML;
           console.log(`${this.botName} will attack ${enemyToAttack.botName} for ${willAttackFor} damage `);
          
           
@@ -65,6 +68,7 @@ export default class PlayerBot {
             this.startAttackCounter();
         }
         else{
+            fightDisplay.innerHTML = `ENEMY DESTROYED!!!! ENEMY DESTROYED!!!! ENEMY DESTROYED!!!!` + "<br>" + fightDisplay.innerHTML;
             console.log("ENEMY DESTROYED!!!! ENEMY DESTROYED!!!! ENEMY DESTROYED!!!!");
         }
 

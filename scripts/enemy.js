@@ -25,7 +25,9 @@ export default class EnemyBot {
         playerToAttack.HP = playerToAttack.HP - willAttackFor;
 
 
-        
+        let fightDisplay = document.getElementById("fight_display");
+
+        fightDisplay.innerHTML = `${this.botName} will attack ${playerToAttack.botName} for ${willAttackFor} damage` + "<br>" + fightDisplay.innerHTML;
         console.log(`${this.botName} will attack ${playerToAttack.botName} for ${willAttackFor} damage `);
 
 
@@ -39,6 +41,7 @@ export default class EnemyBot {
             this.startAttackCounter(playerToAttack);
         }
         else{
+            fightDisplay.innerHTML = `PLAYER DESTROYED!!!! PLAYER DESTROYED!!!! PLAYER DESTROYED!!!!` + "<br>" + fightDisplay.innerHTML;
             console.log("PLAYER DESTROYED!!!! PLAYER DESTROYED!!!! PLAYER DESTROYED!!!!");
         }
 
