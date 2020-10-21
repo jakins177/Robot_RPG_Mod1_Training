@@ -2,6 +2,10 @@
 import EnemyBot from './enemy.js'
 import PlayerBot from './player.js'
 
+let firstEnemy = new EnemyBot(1000,20, 15000, "quick missile", "Can Opener");
+    
+let firstPlayer = new PlayerBot(250,5, 3000, "machine gun", "Determinator", "#player_1_fire_button");
+
 $('#players_1, #players_2').click(function () {
     if (this.id == 'players_1') {
      //  alert('There will be 1 player. Get Ready!');
@@ -24,15 +28,25 @@ $('#players_1, #players_2').click(function () {
 
  });
 
+
+
+ $('#player_1_fire_button').click(function () {
+    if (this.id == 'player_1_fire_button') {
+     //  alert('There will be 1 player. Get Ready!');
+
+     firstPlayer.attack(firstEnemy);
+        
+    }
+ 
+
+ });
+
  function startGame() {
 
-    let firstEnemy = new EnemyBot(1000,20, 15000, "quick missile", "Can Opener");
     
 
-    let firstPlayer = new PlayerBot(250,5, 3000, "machine gun", "Determinator");
-
     firstEnemy.startAttackCounter(firstPlayer);
-    firstPlayer.startAttackCounter();
+    //firstPlayer.startAttackCounter();
 
         
 

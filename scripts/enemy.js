@@ -29,7 +29,7 @@ export default class EnemyBot {
 
         
 
-        let willAttackFor = ( Math.floor(Math.random() * ((this.weaponAttackPower + 5) - (this.weaponAttackPower - 5) + 1)) +  (this.weaponAttackPower - 1));
+        let willAttackFor = ( Math.floor(Math.random() * ((this.weaponAttackPower + 5) - (this.weaponAttackPower - 5) + 1)) +  (this.weaponAttackPower - 5));
 
         playerToAttack.HP = playerToAttack.HP - willAttackFor;
 
@@ -42,7 +42,7 @@ export default class EnemyBot {
             this.startAttackCounter(playerToAttack);
         }
         else{
-            console.log("PLAY DESTROYED!!!! PLAY DESTROYED!!!! PLAY DESTROYED!!!!");
+            console.log("PLAYER DESTROYED!!!! PLAYER DESTROYED!!!! PLAYER DESTROYED!!!!");
         }
 
       }
